@@ -16,8 +16,8 @@ protocol SidePanelViewControllerDelegate {
 class SidePanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-        
     var animals: Array<Animal>!
+    var delegate: SidePanelViewControllerDelegate?
     
     struct TableView {
         struct CellIdentifiers {
@@ -50,6 +50,8 @@ class SidePanelViewController: UIViewController, UITableViewDataSource, UITableV
     // Mark: Table View Delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedAnimal = animals[indexPath.row]
+        delegate?.animalSelected(selectedAnimal)
     }
     
 }
