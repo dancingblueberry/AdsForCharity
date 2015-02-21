@@ -11,18 +11,18 @@ import UIKit
 
 @objc
 protocol SidePanelViewControllerDelegate {
-  func animalSelected(animal: Animal)
+  func menuItemSelected(menuItem: MenuItem)
 }
 
 class SidePanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var animals: Array<Animal>!
+    var menuItems: Array<MenuItem>!
     var delegate: SidePanelViewControllerDelegate?
     
     struct TableView {
         struct CellIdentifiers {
-            static let AnimalCell = "AnimalCell"
+            static let MenuItemCell = "AnimalCell"
         }
     }
   
@@ -39,20 +39,20 @@ class SidePanelViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animals.count
+        return menuItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.AnimalCell, forIndexPath: indexPath) as AnimalCell
-        cell.configureForAnimal(animals[indexPath.row])
+        let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuItemCell, forIndexPath: indexPath) as AnimalCell
+        cell.configureForMenuItem(menuItems[indexPath.row])
         return cell
     }
     
     // Mark: Table View Delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedAnimal = animals[indexPath.row]
-        delegate?.animalSelected(selectedAnimal)
+        let selectedMenuItem = menuItems[indexPath.row]
+        delegate?.menuItemSelected(selectedMenuItem)
     }
     
 }
@@ -60,10 +60,9 @@ class SidePanelViewController: UIViewController, UITableViewDataSource, UITableV
 class AnimalCell: UITableViewCell {
   @IBOutlet weak var animalImageView: UIImageView!
   @IBOutlet weak var imageNameLabel: UILabel!
-//  @IBOutlet weak var imageCreatorLabel: UILabel!
   
-  func configureForAnimal(animal: Animal) {
-    animalImageView.image = animal.image
-    imageNameLabel.text = animal.title
+  func configureForMenuItem(menuItem: MenuItem) {
+    animalImageView.image = menuItem.image
+    imageNameLabel.text = menuItem.title
   }
 }

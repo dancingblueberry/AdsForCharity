@@ -9,7 +9,7 @@
 import UIKit
 
 @objc
-class Animal {
+class MenuItem {
     
     let title: String
     let image: UIImage?
@@ -19,10 +19,10 @@ class Animal {
         self.image = image
     }
     
-    class func allCats() -> Array<Animal> {
-        return [ Animal(title: "Menu", image: UIImage(named: "ID-100113060.jpg")),
-                 Animal(title: "Account", image: UIImage(named: "ID-10022760.jpg")),
-                 Animal(title: "About", image: UIImage(named: "ID-10091065.jpg")) ]
+    class func allMenuItems() -> Array<MenuItem> {
+        return [ MenuItem(title: "Menu", image: UIImage(named: "ID-100113060.jpg")),
+                 MenuItem(title: "Account", image: UIImage(named: "ID-10022760.jpg")),
+                 MenuItem(title: "About", image: UIImage(named: "ID-10091065.jpg")) ]
     }
 
 }

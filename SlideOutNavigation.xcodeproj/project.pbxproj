@@ -35,10 +35,17 @@
 		17C4E017198E43AD00E0B395 /* ID-10034505.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C4E001198E43AD00E0B395 /* ID-10034505.jpg */; };
 		17C4E018198E43AD00E0B395 /* ID-10056667.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C4E002198E43AD00E0B395 /* ID-10056667.jpg */; };
 		17C4E019198E43AD00E0B395 /* ID-1009881.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C4E003198E43AD00E0B395 /* ID-1009881.jpg */; };
-		17C4E01B198E444000E0B395 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4E01A198E444000E0B395 /* Animal.swift */; };
+		17C4E01B198E444000E0B395 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4E01A198E444000E0B395 /* MenuItem.swift */; };
 		17C4E01F198E477C00E0B395 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4E01E198E477C00E0B395 /* CenterViewController.swift */; };
 		17C4E021198E4CB500E0B395 /* ID-10029135.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C4E020198E4CB500E0B395 /* ID-10029135.jpg */; };
 		17C4E023198E504400E0B395 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4E022198E504400E0B395 /* SidePanelViewController.swift */; };
+		AB7303261A98AAF2005C259C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7303251A98AAF2005C259C /* Firebase.framework */; };
+		AB73032B1A98AB44005C259C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB73032A1A98AB44005C259C /* libicucore.dylib */; };
+		AB73032D1A98AB4B005C259C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB73032C1A98AB4B005C259C /* libc++.dylib */; };
+		AB73032F1A98AB51005C259C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB73032E1A98AB51005C259C /* CFNetwork.framework */; };
+		AB7303311A98AB59005C259C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7303301A98AB59005C259C /* Security.framework */; };
+		AB7303331A98AB62005C259C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7303321A98AB62005C259C /* SystemConfiguration.framework */; };
+		AB7303351A98B02E005C259C /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7303341A98B02E005C259C /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,10 +91,18 @@
 		17C4E001198E43AD00E0B395 /* ID-10034505.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ID-10034505.jpg"; sourceTree = "<group>"; };
 		17C4E002198E43AD00E0B395 /* ID-10056667.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ID-10056667.jpg"; sourceTree = "<group>"; };
 		17C4E003198E43AD00E0B395 /* ID-1009881.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ID-1009881.jpg"; sourceTree = "<group>"; };
-		17C4E01A198E444000E0B395 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		17C4E01A198E444000E0B395 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		17C4E01E198E477C00E0B395 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		17C4E020198E4CB500E0B395 /* ID-10029135.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ID-10029135.jpg"; sourceTree = "<group>"; };
 		17C4E022198E504400E0B395 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
+		AB7303251A98AAF2005C259C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../../Desktop/Firebase.framework; sourceTree = "<group>"; };
+		AB7303271A98AB05005C259C /* SlideOutNavigation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlideOutNavigation-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB73032A1A98AB44005C259C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		AB73032C1A98AB4B005C259C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		AB73032E1A98AB51005C259C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AB7303301A98AB59005C259C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AB7303321A98AB62005C259C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AB7303341A98B02E005C259C /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +110,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7303331A98AB62005C259C /* SystemConfiguration.framework in Frameworks */,
+				AB7303311A98AB59005C259C /* Security.framework in Frameworks */,
+				AB73032F1A98AB51005C259C /* CFNetwork.framework in Frameworks */,
+				AB73032D1A98AB4B005C259C /* libc++.dylib in Frameworks */,
+				AB73032B1A98AB44005C259C /* libicucore.dylib in Frameworks */,
+				AB7303261A98AAF2005C259C /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +142,12 @@
 		17C4DFC1198E428000E0B395 = {
 			isa = PBXGroup;
 			children = (
+				AB7303321A98AB62005C259C /* SystemConfiguration.framework */,
+				AB7303301A98AB59005C259C /* Security.framework */,
+				AB73032E1A98AB51005C259C /* CFNetwork.framework */,
+				AB73032C1A98AB4B005C259C /* libc++.dylib */,
+				AB73032A1A98AB44005C259C /* libicucore.dylib */,
+				AB7303251A98AAF2005C259C /* Firebase.framework */,
 				17C4DFCC198E428000E0B395 /* SlideOutNavigation */,
 				17C4DFDF198E428000E0B395 /* SlideOutNavigationTests */,
 				17C4DFCB198E428000E0B395 /* Products */,
@@ -142,13 +169,15 @@
 				17BDB3511998A8860064476C /* Resources */,
 				17C4DFCF198E428000E0B395 /* AppDelegate.swift */,
 				17C4E01E198E477C00E0B395 /* CenterViewController.swift */,
+				AB7303341A98B02E005C259C /* constants.swift */,
 				178B5A5C198E7379006414ED /* ContainerViewController.swift */,
 				17C4E022198E504400E0B395 /* SidePanelViewController.swift */,
-				17C4E01A198E444000E0B395 /* Animal.swift */,
+				17C4E01A198E444000E0B395 /* MenuItem.swift */,
 				17C4DFD3198E428000E0B395 /* Main.storyboard */,
 				179191C81A1D4F0D00072138 /* LaunchScreen.xib */,
 				17C4DFD6198E428000E0B395 /* Images.xcassets */,
 				17C4DFCD198E428000E0B395 /* Supporting Files */,
+				AB7303271A98AB05005C259C /* SlideOutNavigation-Bridging-Header.h */,
 			);
 			path = SlideOutNavigation;
 			sourceTree = "<group>";
@@ -338,10 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C4DFD0198E428000E0B395 /* AppDelegate.swift in Sources */,
-				17C4E01B198E444000E0B395 /* Animal.swift in Sources */,
+				17C4E01B198E444000E0B395 /* MenuItem.swift in Sources */,
 				178B5A5D198E7379006414ED /* ContainerViewController.swift in Sources */,
 				17C4E023198E504400E0B395 /* SidePanelViewController.swift in Sources */,
 				17C4E01F198E477C00E0B395 /* CenterViewController.swift in Sources */,
+				AB7303351A98B02E005C259C /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,9 +487,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Leia/Desktop,
+				);
 				INFOPLIST_FILE = "SlideOutNavigation/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SlideOutNavigation/SlideOutNavigation-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -468,9 +506,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Leia/Desktop,
+				);
 				INFOPLIST_FILE = "SlideOutNavigation/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SlideOutNavigation/SlideOutNavigation-Bridging-Header.h";
 			};
 			name = Release;
 		};

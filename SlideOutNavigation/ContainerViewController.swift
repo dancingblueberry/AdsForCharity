@@ -39,6 +39,10 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
         
         centerNavigationController.didMoveToParentViewController(self)
         
+        centerViewController.startTimer()
+        centerViewController.updateUserRaised()
+        centerViewController.updateTotalRaised()
+        
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
         centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
@@ -67,7 +71,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
     func addLeftPanelViewController() {
         if (leftViewController == nil) {
             leftViewController = UIStoryboard.leftViewController()
-            leftViewController!.animals = Animal.allCats()
+            leftViewController!.menuItems = MenuItem.allMenuItems()
             
             addChildSidePanelController(leftViewController!)
         }
