@@ -18,11 +18,29 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
     
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var userRaisedLabel: UILabel!
+    @IBOutlet weak private var progressView: UIProgressView!
     
     var timer: NSTimer?
     var timerStart: NSDate?
     var delegate: CenterViewControllerDelegate?
     var currentImage: Int?
+    var counter:Int = 0 {
+        didSet {
+            let fractionalProgress = Float(counter) / 100.0
+            let animated = counter != 0
+            
+            progressView.setProgress(fractionalProgress, animated: animated)
+            //  progressLabel.text = ("\(counter)%")
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        startTimer()
+        showUserRaised()
+        showTotalRaised()
+    }
 
     // MARK: Button actions
     
@@ -53,6 +71,8 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         imageView.image = UIImage(data: data!)
 //        titleLabel.text = "Ad: " + toString(currentImage)
         currentImage = currentImage! + 1 < ADS.count ? currentImage! + 1 : 0
+        counter = 0;
+        
     }
     
     func showUserRaised() {

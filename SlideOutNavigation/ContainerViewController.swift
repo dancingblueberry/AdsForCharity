@@ -39,10 +39,6 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
         
         centerNavigationController.didMoveToParentViewController(self)
         
-        centerViewController.startTimer()
-        centerViewController.showUserRaised()
-        centerViewController.showTotalRaised()
-        
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
         centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
@@ -61,10 +57,10 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
   
     func collapseSidePanels() {
         switch (currentState) {
-        case .LeftPanelExpanded:
-            toggleLeftPanel()
-        default:
-            break
+            case .LeftPanelExpanded:
+                toggleLeftPanel()
+            default:
+                break
         }
     }
   
