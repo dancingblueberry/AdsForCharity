@@ -40,8 +40,8 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
         centerNavigationController.didMoveToParentViewController(self)
         
         centerViewController.startTimer()
-        centerViewController.updateUserRaised()
-        centerViewController.updateTotalRaised()
+        centerViewController.showUserRaised()
+        centerViewController.showTotalRaised()
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
         centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)

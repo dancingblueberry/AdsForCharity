@@ -20,20 +20,20 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="350"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LW-Oy-feI">
-                                <rect key="frame" x="0.0" y="525" width="600" height="75"/>
+                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
                                 <color key="backgroundColor" red="0.1201431822" green="0.93061474119999998" blue="0.51130160290000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="aMJ-7v-gI0"/>
+                                    <constraint firstAttribute="height" constant="61" id="lMo-lC-miz"/>
                                 </constraints>
                                 <state key="normal" title="Donate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raised" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-FW-BQ2">
-                                <rect key="frame" x="0.0" y="450" width="600" height="75"/>
+                                <rect key="frame" x="0.0" y="439" width="600" height="100"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.82914668749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Hdc-n4-KS5"/>
+                                    <constraint firstAttribute="height" constant="100" id="lbT-gs-lQ9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,16 +42,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5QZ-bA-oHp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="1PG-mb-fuf"/>
-                            <constraint firstItem="9LW-Oy-feI" firstAttribute="leading" secondItem="RMC-FW-BQ2" secondAttribute="leading" id="5di-Ni-oXi"/>
-                            <constraint firstItem="9LW-Oy-feI" firstAttribute="top" secondItem="RMC-FW-BQ2" secondAttribute="bottom" id="Day-ci-oqk"/>
-                            <constraint firstItem="5QZ-bA-oHp" firstAttribute="trailing" secondItem="RMC-FW-BQ2" secondAttribute="trailing" id="KDH-FS-NL7"/>
-                            <constraint firstAttribute="trailing" secondItem="5QZ-bA-oHp" secondAttribute="trailing" id="Ly2-pw-rB4"/>
-                            <constraint firstItem="5QZ-bA-oHp" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="POV-E3-e0j"/>
-                            <constraint firstItem="9LW-Oy-feI" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="U4T-dR-8he"/>
-                            <constraint firstItem="RMC-FW-BQ2" firstAttribute="top" secondItem="5QZ-bA-oHp" secondAttribute="bottom" constant="36" id="YcN-2W-cwd"/>
-                            <constraint firstItem="9LW-Oy-feI" firstAttribute="trailing" secondItem="RMC-FW-BQ2" secondAttribute="trailing" id="uWX-2u-7e7"/>
-                            <constraint firstItem="5QZ-bA-oHp" firstAttribute="leading" secondItem="RMC-FW-BQ2" secondAttribute="leading" id="yLv-SA-QCQ"/>
+                            <constraint firstItem="RMC-FW-BQ2" firstAttribute="trailing" secondItem="9LW-Oy-feI" secondAttribute="trailing" id="6EE-KV-h8z"/>
+                            <constraint firstItem="9LW-Oy-feI" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="ETg-VP-h8q"/>
+                            <constraint firstItem="9LW-Oy-feI" firstAttribute="top" secondItem="RMC-FW-BQ2" secondAttribute="bottom" id="HRD-El-Xnp"/>
+                            <constraint firstItem="9LW-Oy-feI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Mej-EN-zNN"/>
+                            <constraint firstItem="RMC-FW-BQ2" firstAttribute="leading" secondItem="5QZ-bA-oHp" secondAttribute="leading" id="PON-CH-5dG"/>
+                            <constraint firstItem="5QZ-bA-oHp" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="U8z-vO-HzA"/>
+                            <constraint firstItem="9LW-Oy-feI" firstAttribute="leading" secondItem="RMC-FW-BQ2" secondAttribute="leading" id="Wcp-ag-Wyy"/>
+                            <constraint firstItem="RMC-FW-BQ2" firstAttribute="top" secondItem="5QZ-bA-oHp" secondAttribute="bottom" constant="25" id="gyI-tT-enK"/>
+                            <constraint firstItem="RMC-FW-BQ2" firstAttribute="trailing" secondItem="5QZ-bA-oHp" secondAttribute="trailing" id="llF-cd-GkH"/>
+                            <constraint firstAttribute="trailing" secondItem="9LW-Oy-feI" secondAttribute="trailing" id="tvA-Ct-NLw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Slide Out Tutorial" id="Eg8-MT-Krf">

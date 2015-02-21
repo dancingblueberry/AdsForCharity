@@ -55,25 +55,28 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         currentImage = currentImage! + 1 < ADS.count ? currentImage! + 1 : 0
     }
     
-    func updateUserRaised() {
-        var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/user/Amanda")
-        var snapshot = fireBaseRef.observeEventType(.ChildChanged,
-            withBlock: {
-                snapshot in
-                println(snapshot.value)
-                //                let raised = snapshot.value.objectForKey("raised") as? String
-                //                println(raised)
+    func showUserRaised() {
+        var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/user")
+        fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
+            print("user-raised: ")
+//            println(snapshot.value)
+            let result = snapshot.value as? String
+            print(result)
+//            self.userRaisedLabel.text = result
+            //                let raised = snapshot.value.objectForKey("raised") as? String
+            //                println(raised)
         })
         //  println(snapshot.value)
-        //  userRaisedLabel.text = toString(snapshot.value)
+        //  userRaisedLabel.text = toString(snapshot)
         //  fireBaseRef.valueForKey("raised")
     }
     
-    func updateTotalRaised() {
-        var fireBaseRef = Firebase(url:FIRE_BASE_URL)
-        fireBaseRef.observeEventType(.ChildChanged,
+    func showTotalRaised() {
+        var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/total-raised")
+        fireBaseRef.observeEventType(.Value,
             withBlock: {
                 snapshot in
+                print("total-raised: ")
                 println(snapshot.value)
                 //                let raised = snapshot.value.objectForKey("raised") as? String
                 //                println(raised)
