@@ -25,6 +25,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
         }
     }
     var leftViewController: SidePanelViewController?
+    
     let centerPanelExpandedOffset: CGFloat = 60
     
     override func viewDidLoad() {
