@@ -14,7 +14,7 @@ enum SlideOutState {
     case LeftPanelExpanded
 }
 
-class ContainerViewController: UIViewController, CenterViewControllerDelegate, SidePanelViewControllerDelegate, UIGestureRecognizerDelegate {
+class ContainerViewController: UIViewController, SidePanelViewControllerDelegate, UIGestureRecognizerDelegate {
     
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
@@ -31,7 +31,6 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, S
     override func viewDidLoad() {
         super.viewDidLoad()
         centerViewController = UIStoryboard.centerViewController()
-        centerViewController.delegate = self
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)

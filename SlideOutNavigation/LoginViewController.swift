@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
                     println("Successfully logged in with uid: \(authData.uid)")
                 }
         })
+        println("Uid: " + ref.authData.uid)
     }
     
     @IBAction func signUp(sender: AnyObject) {

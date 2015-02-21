@@ -8,34 +8,22 @@
 
 import UIKit
 
-@objc
-protocol CenterViewControllerDelegate {
-    optional func toggleLeftPanel()
-    optional func collapseSidePanels()
-}
-
 class CenterViewController: UIViewController {
     
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var userRaisedLabel: UILabel!
     
+    var currentImage: Int?
+    
     var timer: NSTimer?
     var timerStart: NSDate?
-    var delegate: CenterViewControllerDelegate?
-    var currentImage: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        startTimer()
-//        showUserRaised()
-//        showTotalRaised()
-    }
-
-    // MARK: Button actions
-    
-    @IBAction func menuTapped(sender: AnyObject) {
-        delegate?.toggleLeftPanel?()
+        showUserRaised()
+        showTotalRaised()
     }
     
     func startTimer() {
@@ -52,7 +40,7 @@ class CenterViewController: UIViewController {
         let url = NSURL(string: ADS[currentImage!].image_url)
         let data = NSData(contentsOfURL: url!)
         imageView.image = UIImage(data: data!)
-//        titleLabel.text = "Ad: " + toString(currentImage)
+        userRaisedLabel.text = "Ad: " + toString(currentImage)
         currentImage = currentImage! + 1 < ADS.count ? currentImage! + 1 : 0
         
     }
