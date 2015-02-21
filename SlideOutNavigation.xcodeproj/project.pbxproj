@@ -102,7 +102,7 @@
 		AB73032E1A98AB51005C259C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AB7303301A98AB59005C259C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AB7303321A98AB62005C259C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AB7303381A98BF62005C259C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
+		AB7303381A98BF62005C259C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,6 @@
 		17BDB3511998A8860064476C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AB7303381A98BF62005C259C /* Constants.swift */,
 				17C4E020198E4CB500E0B395 /* ID-10029135.jpg */,
 				17C4DFEC198E43AD00E0B395 /* Cats */,
 				17C4DFF8198E43AD00E0B395 /* Dogs */,
@@ -171,6 +170,7 @@
 				17C4DFCF198E428000E0B395 /* AppDelegate.swift */,
 				17C4E01E198E477C00E0B395 /* CenterViewController.swift */,
 				178B5A5C198E7379006414ED /* ContainerViewController.swift */,
+				AB7303381A98BF62005C259C /* Constants.swift */,
 				17C4E022198E504400E0B395 /* SidePanelViewController.swift */,
 				17C4E01A198E444000E0B395 /* MenuItem.swift */,
 				17C4DFD3198E428000E0B395 /* Main.storyboard */,
