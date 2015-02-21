@@ -11,7 +11,6 @@ import UIKit
 @objc
 protocol CenterViewControllerDelegate {
     optional func toggleLeftPanel()
-    optional func toggleRightPanel()
     optional func collapseSidePanels()
 }
 
@@ -27,10 +26,6 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
     
     @IBAction func kittiesTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
-    }
-    
-    @IBAction func puppiesTapped(sender: AnyObject) {
-        delegate?.toggleRightPanel?()
     }
     
     func animalSelected(animal: Animal) {
