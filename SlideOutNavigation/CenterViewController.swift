@@ -14,45 +14,28 @@ protocol CenterViewControllerDelegate {
     optional func collapseSidePanels()
 }
 
-class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
+class CenterViewController: UIViewController {
     
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var userRaisedLabel: UILabel!
-    @IBOutlet weak private var progressView: UIProgressView!
     
     var timer: NSTimer?
     var timerStart: NSDate?
     var delegate: CenterViewControllerDelegate?
     var currentImage: Int?
-    var counter:Int = 0 {
-        didSet {
-            let fractionalProgress = Float(counter) / 100.0
-            let animated = counter != 0
-            
-            progressView.setProgress(fractionalProgress, animated: animated)
-            //  progressLabel.text = ("\(counter)%")
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startTimer()
-        showUserRaised()
-        showTotalRaised()
+//        startTimer()
+//        showUserRaised()
+//        showTotalRaised()
     }
 
     // MARK: Button actions
     
     @IBAction func menuTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
-    }
-    
-    func menuItemSelected(menuItem: MenuItem) {
-//        imageView.image = menuItem.image
-//        titleLabel.text = menuItem.title
-        
-        delegate?.collapseSidePanels?()
     }
     
     func startTimer() {
@@ -71,7 +54,6 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         imageView.image = UIImage(data: data!)
 //        titleLabel.text = "Ad: " + toString(currentImage)
         currentImage = currentImage! + 1 < ADS.count ? currentImage! + 1 : 0
-        counter = 0;
         
     }
     
@@ -79,16 +61,10 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/user")
         fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
             print("user-raised: ")
-//            println(snapshot.value)
             let result = snapshot.value as? String
             print(result)
-//            self.userRaisedLabel.text = result
-            //                let raised = snapshot.value.objectForKey("raised") as? String
-            //                println(raised)
         })
-        //  println(snapshot.value)
-        //  userRaisedLabel.text = toString(snapshot)
-        //  fireBaseRef.valueForKey("raised")
+
     }
     
     func showTotalRaised() {
@@ -98,12 +74,7 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
                 snapshot in
                 print("total-raised: ")
                 println(snapshot.value)
-                //                let raised = snapshot.value.objectForKey("raised") as? String
-                //                println(raised)
         })
-        //        println(snapshot.value)
-        //  yourRaisedTextView.text = String(snapshot)
-        //  fireBaseRef.valueForKey("raised")
     }
 
 }

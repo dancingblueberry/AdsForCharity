@@ -12,6 +12,8 @@
 	<dict>
 		<key>01C454207A4C01F6753F9A93468094F1E0637F9B</key>
 		<string>github.com:dancingblueberry/SwiftSlideNavbar.git</string>
+		<key>BCDB49ED628DA8AA71FA05685DFF5C163964F4D2</key>
+		<string>https://github.com/evnaz/ENSwiftSideMenu.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SlideOutNavigation.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>01C454207A4C01F6753F9A93468094F1E0637F9B</key>
 		<string>../..</string>
+		<key>BCDB49ED628DA8AA71FA05685DFF5C163964F4D2</key>
+		<string>../../../../../../Desktop/ENSwiftSideMenu</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:dancingblueberry/SwiftSlideNavbar.git</string>
@@ -28,6 +32,14 @@
 	<string>01C454207A4C01F6753F9A93468094F1E0637F9B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BCDB49ED628DA8AA71FA05685DFF5C163964F4D2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ENSwiftSideMenu</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

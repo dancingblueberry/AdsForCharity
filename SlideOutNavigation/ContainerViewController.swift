@@ -14,7 +14,7 @@ enum SlideOutState {
     case LeftPanelExpanded
 }
 
-class ContainerViewController: UIViewController, CenterViewControllerDelegate, UIGestureRecognizerDelegate {
+class ContainerViewController: UIViewController, CenterViewControllerDelegate, SidePanelViewControllerDelegate, UIGestureRecognizerDelegate {
     
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
@@ -74,7 +74,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
     }
     
     func addChildSidePanelController(sidePanelController: SidePanelViewController) {
-        sidePanelController.delegate = centerViewController
+        sidePanelController.delegate = self
         
         view.insertSubview(sidePanelController.view, atIndex: 0)
         
@@ -137,16 +137,36 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
                 break
         }
     }
+    
+    func menuItemSelected(menuItem: MenuItem) {
+        let vc = viewController(menuItem)
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleLeftPanel")
+        self.centerNavigationController.viewControllers = [vc]
+        self.collapseSidePanels()
+    }
+    
+    func viewController(menuItem: MenuItem) -> UIViewController {
+        if (menuItem.title == "Home") {
+            return UIStoryboard.centerViewController()!
+        } else if (menuItem.title == "Account") {
+            return UIStoryboard.loginViewController()!
+        }
+        return UIStoryboard.centerViewController()!
+    }
 }
 
 private extension UIStoryboard {
-  class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
+    class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
   
-  class func leftViewController() -> SidePanelViewController? {
-    return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? SidePanelViewController
-  }
+    class func leftViewController() -> SidePanelViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? SidePanelViewController
+    }
   
-  class func centerViewController() -> CenterViewController? {
-    return mainStoryboard().instantiateViewControllerWithIdentifier("CenterViewController") as? CenterViewController
-  }
+    class func centerViewController() -> CenterViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("CenterViewController") as? CenterViewController
+    }
+    
+    class func loginViewController() -> LoginViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("LoginViewController") as? LoginViewController
+    }
 }

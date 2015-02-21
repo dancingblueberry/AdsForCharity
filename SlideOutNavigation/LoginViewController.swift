@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +24,46 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func logIn(sender: AnyObject) {
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        
+        let ref = Firebase(url: FIRE_BASE_URL)
+        ref.authUser(username, password: password,
+            withCompletionBlock: { error, authData in
+                if error != nil {
+                    // There was an error logging in to this account
+                    println("Couldn't log in")
+                } else {
+                    // We are now logged in
+                    println("Successfully logged in with uid: \(authData.uid)")
+                }
+        })
+    }
+    
+    @IBAction func signUp(sender: AnyObject) {
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+
+        let ref = Firebase(url: FIRE_BASE_URL + "/users")
+        ref.createUser(username, password: password,
+            withValueCompletionBlock: { error, result in
+                if error != nil {
+                    // There was an error creating the account
+                    println("Couldn't create account")
+                } else {
+                    var uid = result["uid"] as? String
+                    println("Successfully created user account with uid: \(uid)")
+                    var initUser = [
+                        "funds": 0,
+                        "views": 0
+                    ]
+//                    var newUser = [String(uid!): initUser]
+                    ref.childByAppendingPath(String(uid!)).setValue(initUser)
+                }
+        })
+    }
 
     /*
     // MARK: - Navigation
