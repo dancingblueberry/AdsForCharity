@@ -54,14 +54,14 @@ class LoginViewController: UIViewController {
                     // There was an error creating the account
                     println("Couldn't create account")
                 } else {
-                    var uid = result["uid"] as? String
-                    println("Successfully created user account with uid: \(uid)")
-                    var initUser = [
+                    let uid = result["uid"] as? String
+                    
+                    let initUser = [
                         "funds": 0,
                         "views": 0
                     ]
-//                    var newUser = [String(uid!): initUser]
                     ref.childByAppendingPath(String(uid!)).setValue(initUser)
+                    println("Successfully created user account with uid: \(uid)")
                 }
         })
     }

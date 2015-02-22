@@ -58,11 +58,11 @@ class SidePanelViewController: UIViewController, UITableViewDataSource, UITableV
 }
 
 class AnimalCell: UITableViewCell {
-  @IBOutlet weak var animalImageView: UIImageView!
-  @IBOutlet weak var imageNameLabel: UILabel!
+    @IBOutlet weak var menuItemImageView: UIImageView!
+//    @IBOutlet weak var imageNameLabel: UILabel!
   
-  func configureForMenuItem(menuItem: MenuItem) {
-    animalImageView.image = menuItem.image
-    imageNameLabel.text = menuItem.title
-  }
+    func configureForMenuItem(menuItem: MenuItem) {
+        menuItemImageView.image = menuItem.image
+//        imageNameLabel.text = menuItem.title
+    }
 }

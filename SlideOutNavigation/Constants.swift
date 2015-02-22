@@ -21,6 +21,8 @@ class ad {
 }
 
 let ADS: Array<ad> = [
-    ad(image_url: "http://assets.worldwildlife.org/photos/144/images/original/Giant_Panda_Hero_image_(c)_Michel_Gunther_WWF_Canon.jpg?1345515244", company: "unisef"),
-    ad(image_url: "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2012/9/17/1347907861151/Giant-panda-Mei-Xiang-tak-010.jpg", company: "boo")
+    ad(image_url: "http://www.petyourdog.com/uploads/articles/17-6.jpg", company: "unisef"),
+    ad(image_url: "https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg", company: "boo"),
+    ad(image_url: "http://shakacity.com/sites/default/files/dog_0.jpg", company: "smokey"),
+    ad(image_url: "http://images.social-first.net/files/ikwiz/dog-breed-dog-breed-pictures1.jpg", company: "tenten")
 ]
