@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-enum ViewState {
+enum MenuState {
     case MenuCollapsed
     case MenuExpanded
 }
@@ -18,14 +18,15 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
-    var currentState: ViewState = .MenuCollapsed {
+    var menuViewController: SidePanelViewController?
+    var loginViewController: LoginViewController?
+    
+    var menuState: MenuState = .MenuCollapsed {
         didSet {
-            let shouldShowShadow = currentState != .MenuCollapsed
+            let shouldShowShadow = menuState != .MenuCollapsed
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
-    var menuViewController: SidePanelViewController?
-    var loginViewController: LoginViewController?
     
     let centerPanelExpandedOffset: CGFloat = 70
     
@@ -47,7 +48,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     // MARK: CenterViewController delegate methods
   
     func toggleMenuPanel() {
-        let notAlreadyExpanded = (currentState != .MenuExpanded)
+        let notAlreadyExpanded = (menuState != .MenuExpanded)
         
         addMenuPanelViewController()
         animateMenuPanel(shouldExpand: notAlreadyExpanded)
@@ -73,12 +74,12 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
   
     func animateMenuPanel(#shouldExpand: Bool) {
         if (shouldExpand) {
-            currentState = .MenuExpanded
+            menuState = .MenuExpanded
             
             animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerNavigationController.view.frame) - centerPanelExpandedOffset)
         } else {
             animateCenterPanelXPosition(targetPosition: 0) { finished in
-                self.currentState = .MenuCollapsed
+                self.menuState = .MenuCollapsed
                 
                 self.menuViewController!.view.removeFromSuperview()
                 self.menuViewController = nil
@@ -107,7 +108,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
         
         switch(recognizer.state) {
             case .Began:
-                if (currentState == .MenuCollapsed) {
+                if (menuState == .MenuCollapsed) {
                     if (gestureIsDraggingFromLeftToRight) {
                         addMenuPanelViewController()
                     }
