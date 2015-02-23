@@ -9,22 +9,23 @@
 import UIKit
 import QuartzCore
 
-enum SlideOutState {
-    case BothCollapsed
-    case LeftPanelExpanded
+enum ViewState {
+    case MenuCollapsed
+    case MenuExpanded
 }
 
 class ContainerViewController: UIViewController, SidePanelViewControllerDelegate, UIGestureRecognizerDelegate {
     
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
-    var currentState: SlideOutState = .BothCollapsed {
+    var currentState: ViewState = .MenuCollapsed {
         didSet {
-            let shouldShowShadow = currentState != .BothCollapsed
+            let shouldShowShadow = currentState != .MenuCollapsed
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
     var leftViewController: SidePanelViewController?
+    var loginViewController: LoginViewController?
     
     let centerPanelExpandedOffset: CGFloat = 300
     
@@ -46,7 +47,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     // MARK: CenterViewController delegate methods
   
     func toggleLeftPanel() {
-        let notAlreadyExpanded = (currentState != .LeftPanelExpanded)
+        let notAlreadyExpanded = (currentState != .MenuExpanded)
         
         if notAlreadyExpanded {
             addLeftPanelViewController()
@@ -57,7 +58,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
   
     func collapseSidePanels() {
         switch (currentState) {
-            case .LeftPanelExpanded:
+            case .MenuExpanded:
                 toggleLeftPanel()
             default:
                 break
@@ -84,12 +85,12 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
   
     func animateLeftPanel(#shouldExpand: Bool) {
         if (shouldExpand) {
-            currentState = .LeftPanelExpanded
+            currentState = .MenuExpanded
             
             animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerNavigationController.view.frame) - centerPanelExpandedOffset)
         } else {
             animateCenterPanelXPosition(targetPosition: 0) { finished in
-                self.currentState = .BothCollapsed
+                self.currentState = .MenuCollapsed
                 
                 self.leftViewController!.view.removeFromSuperview()
                 self.leftViewController = nil
@@ -118,7 +119,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
         
         switch(recognizer.state) {
             case .Began:
-                if (currentState == .BothCollapsed) {
+                if (currentState == .MenuCollapsed) {
                     if (gestureIsDraggingFromLeftToRight) {
                         addLeftPanelViewController()
                     }

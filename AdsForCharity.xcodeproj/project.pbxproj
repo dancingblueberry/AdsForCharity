@@ -103,7 +103,7 @@
 				AB73032C1A98AB4B005C259C /* libc++.dylib */,
 				AB73032A1A98AB44005C259C /* libicucore.dylib */,
 				AB7303251A98AAF2005C259C /* Firebase.framework */,
-				17C4DFCC198E428000E0B395 /* SlideOutNavigation */,
+				17C4DFCC198E428000E0B395 /* AdsForCharity */,
 				17C4DFDF198E428000E0B395 /* SlideOutNavigationTests */,
 				17C4DFCB198E428000E0B395 /* Products */,
 			);
@@ -118,7 +118,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17C4DFCC198E428000E0B395 /* SlideOutNavigation */ = {
+		17C4DFCC198E428000E0B395 /* AdsForCharity */ = {
 			isa = PBXGroup;
 			children = (
 				17BDB3511998A8860064476C /* Resources */,
@@ -135,6 +135,7 @@
 				17C4DFCD198E428000E0B395 /* Supporting Files */,
 				AB7303271A98AB05005C259C /* SlideOutNavigation-Bridging-Header.h */,
 			);
+			name = AdsForCharity;
 			path = SlideOutNavigation;
 			sourceTree = "<group>";
 		};
