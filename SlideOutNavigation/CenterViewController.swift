@@ -11,10 +11,10 @@ class CenterViewController: UIViewController {
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var userRaisedLabel: UILabel!
     
-    var currentImage: Int?
+    var currentImage: Int!
+    var countDownImage: Int!
     
     var timer: NSTimer?
-    var timerStart: NSDate?
     
     var timer2: dispatch_source_t?
     
@@ -23,11 +23,12 @@ class CenterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentImage = 0
+        self.countDownImage = 0
 //        alert = UIAlertView()
 //        alert!.title = "+0.10"
 //        alert!.addButtonWithTitle("Ok")
 
-        self.showAds()
+        self.startAds()
 //        self.showTotalRaised()
     }
     
@@ -47,22 +48,38 @@ class CenterViewController: UIViewController {
 //        timer2 = nil
 //    }
     
+    func startAds() {
+        self.countDownImage = 0
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("showAds"), userInfo: nil, repeats: true)
+    }
+    
     func showAds() {
+        if (--self.countDownImage! > 0) {
+            return
+        }
+
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
+//            TODO: update revenue
+            
             let url = NSURL(string: ADS[self.currentImage!].image_url)
             let data = NSData(contentsOfURL: url!)
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.imageView.image = UIImage(data: data!)
-                self.currentImage = self.currentImage! + 1 < ADS.count ? self.currentImage! + 1 : 0
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("showAds"), userInfo: nil, repeats: false)
+                self.currentImage = self.currentImage + 1 < ADS.count ? self.currentImage + 1 : 0
+                self.countDownImage = 5
             })
         })
+        
     }
     
 //    not working 
     func pauseAds() {
-        self.timer = nil
+        self.timer!.invalidate()
+    }
+    
+    @IBAction func skipAd(sender: AnyObject) {
+        self.countDownImage = 0
     }
     
     func showTotalRaised() {

@@ -16,9 +16,9 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
-    var menuViewController: SidePanelViewController?
-    var loginViewController: LoginViewController?
-    var currentViewController: UIViewController?
+    var menuViewController: SidePanelViewController!
+    var loginViewController: LoginViewController!
+    var currentViewController: UIViewController!
     
     var menuState: MenuState = .MenuCollapsed {
         didSet {
@@ -134,12 +134,9 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     }
     
     func menuItemSelected(menuItem: MenuItem) {
-        let vc = viewController(menuItem)
-//        if (vc != currentViewController && currentViewController == centerViewController) {
-//            centerViewController.pauseAds()
-//        }
-        self.currentViewController = vc
-        self.centerNavigationController.viewControllers = [vc]
+        
+        self.currentViewController = viewController(menuItem)
+        self.centerNavigationController.viewControllers = [self.currentViewController]
         self.toggleMenuPanel()
     }
     
@@ -149,11 +146,17 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
                 centerViewController = UIStoryboard.centerViewController()
                 centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
             }
+            if (currentViewController != centerViewController) {
+                centerViewController.startAds()
+            }
             return centerViewController
         } else if (menuItem.title == "Account") {
             if (loginViewController == nil) {
                 loginViewController = UIStoryboard.loginViewController()
                 loginViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
+            }
+            if (currentViewController == centerViewController) {
+                centerViewController.pauseAds()
             }
             return loginViewController!
         }
