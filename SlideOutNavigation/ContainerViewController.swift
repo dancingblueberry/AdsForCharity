@@ -24,7 +24,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
-    var leftViewController: SidePanelViewController?
+    var menuViewController: SidePanelViewController?
     var loginViewController: LoginViewController?
     
     let centerPanelExpandedOffset: CGFloat = 300
@@ -32,7 +32,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         centerViewController = UIStoryboard.centerViewController()
-        centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleLeftPanel")
+        centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)
@@ -46,31 +46,19 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
   
     // MARK: CenterViewController delegate methods
   
-    func toggleLeftPanel() {
+    func toggleMenuPanel() {
         let notAlreadyExpanded = (currentState != .MenuExpanded)
         
-        if notAlreadyExpanded {
-            addLeftPanelViewController()
-        }
-        
-        animateLeftPanel(shouldExpand: notAlreadyExpanded)
+        addMenuPanelViewController()
+        animateMenuPanel(shouldExpand: notAlreadyExpanded)
     }
   
-    func collapseSidePanels() {
-        switch (currentState) {
-            case .MenuExpanded:
-                toggleLeftPanel()
-            default:
-                break
-        }
-    }
-  
-    func addLeftPanelViewController() {
-        if (leftViewController == nil) {
-            leftViewController = UIStoryboard.leftViewController()
-            leftViewController!.menuItems = MenuItem.allMenuItems()
+    func addMenuPanelViewController() {
+        if (menuViewController == nil) {
+            menuViewController = UIStoryboard.menuViewController()
+            menuViewController!.menuItems = MenuItem.allMenuItems()
             
-            addChildSidePanelController(leftViewController!)
+            addChildSidePanelController(menuViewController!)
         }
     }
     
@@ -83,7 +71,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
         sidePanelController.didMoveToParentViewController(self)
     }
   
-    func animateLeftPanel(#shouldExpand: Bool) {
+    func animateMenuPanel(#shouldExpand: Bool) {
         if (shouldExpand) {
             currentState = .MenuExpanded
             
@@ -92,8 +80,8 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
             animateCenterPanelXPosition(targetPosition: 0) { finished in
                 self.currentState = .MenuCollapsed
                 
-                self.leftViewController!.view.removeFromSuperview()
-                self.leftViewController = nil
+                self.menuViewController!.view.removeFromSuperview()
+                self.menuViewController = nil
             }
         }
     }
@@ -121,7 +109,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
             case .Began:
                 if (currentState == .MenuCollapsed) {
                     if (gestureIsDraggingFromLeftToRight) {
-                        addLeftPanelViewController()
+                        addMenuPanelViewController()
                     }
                     showShadowForCenterViewController(true)
                 }
@@ -129,10 +117,10 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
                 recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
                 recognizer.setTranslation(CGPointZero, inView: view)
             case .Ended:
-                if (leftViewController != nil) {
+                if (menuViewController != nil) {
                     // animate the side panel open or closed based on whether the view has moved more or less than halfway
                     let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
-                    animateLeftPanel(shouldExpand: hasMovedGreaterThanHalfway)
+                    animateMenuPanel(shouldExpand: hasMovedGreaterThanHalfway)
                 }
             default:
                 break
@@ -141,26 +129,35 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     
     func menuItemSelected(menuItem: MenuItem) {
         let vc = viewController(menuItem)
-        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleLeftPanel")
         self.centerNavigationController.viewControllers = [vc]
-        self.collapseSidePanels()
+        self.toggleMenuPanel()
     }
     
     func viewController(menuItem: MenuItem) -> UIViewController {
         if (menuItem.title == "Home") {
-            return UIStoryboard.centerViewController()!
+            if (centerViewController == nil) {
+            centerViewController = UIStoryboard.centerViewController()
+            centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
+            }
+            return centerViewController
         } else if (menuItem.title == "Account") {
-            return UIStoryboard.loginViewController()!
+            if (loginViewController == nil) {
+                loginViewController = UIStoryboard.loginViewController()
+                loginViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
+            }
+            return loginViewController!
         }
-        return UIStoryboard.centerViewController()!
+        return centerViewController
     }
 }
 
 private extension UIStoryboard {
-    class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
+    class func mainStoryboard() -> UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    }
   
-    class func leftViewController() -> SidePanelViewController? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? SidePanelViewController
+    class func menuViewController() -> SidePanelViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("MenuViewController") as? SidePanelViewController
     }
   
     class func centerViewController() -> CenterViewController? {
