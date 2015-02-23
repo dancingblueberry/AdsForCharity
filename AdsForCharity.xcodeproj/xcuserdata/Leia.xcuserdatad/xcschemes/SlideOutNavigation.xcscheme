@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17C4DFC9198E428000E0B395"
-               BuildableName = "SlideOutNavigation.app"
-               BlueprintName = "SlideOutNavigation"
-               ReferencedContainer = "container:SlideOutNavigation.xcodeproj">
+               BuildableName = "AdsForCharity.app"
+               BlueprintName = "AdsForCharity"
+               ReferencedContainer = "container:AdsForCharity.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17C4DFDB198E428000E0B395"
-               BuildableName = "SlideOutNavigationTests.xctest"
-               BlueprintName = "SlideOutNavigationTests"
-               ReferencedContainer = "container:SlideOutNavigation.xcodeproj">
+               BuildableName = "AdsForCharityTests.xctest"
+               BlueprintName = "AdsForCharityTests"
+               ReferencedContainer = "container:AdsForCharity.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17C4DFDB198E428000E0B395"
-               BuildableName = "SlideOutNavigationTests.xctest"
-               BlueprintName = "SlideOutNavigationTests"
-               ReferencedContainer = "container:SlideOutNavigation.xcodeproj">
+               BuildableName = "AdsForCharityTests.xctest"
+               BlueprintName = "AdsForCharityTests"
+               ReferencedContainer = "container:AdsForCharity.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17C4DFC9198E428000E0B395"
-            BuildableName = "SlideOutNavigation.app"
-            BlueprintName = "SlideOutNavigation"
-            ReferencedContainer = "container:SlideOutNavigation.xcodeproj">
+            BuildableName = "AdsForCharity.app"
+            BlueprintName = "AdsForCharity"
+            ReferencedContainer = "container:AdsForCharity.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17C4DFC9198E428000E0B395"
-            BuildableName = "SlideOutNavigation.app"
-            BlueprintName = "SlideOutNavigation"
-            ReferencedContainer = "container:SlideOutNavigation.xcodeproj">
+            BuildableName = "AdsForCharity.app"
+            BlueprintName = "AdsForCharity"
+            ReferencedContainer = "container:AdsForCharity.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17C4DFC9198E428000E0B395"
-            BuildableName = "SlideOutNavigation.app"
-            BlueprintName = "SlideOutNavigation"
-            ReferencedContainer = "container:SlideOutNavigation.xcodeproj">
+            BuildableName = "AdsForCharity.app"
+            BlueprintName = "AdsForCharity"
+            ReferencedContainer = "container:AdsForCharity.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

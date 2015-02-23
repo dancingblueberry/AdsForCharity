@@ -34,7 +34,7 @@ class CenterViewController: UIViewController {
             self.startTimer()
             //while(true) {}
         }
-//        showTotalRaised()
+        showTotalRaised()
 //        startTimer()
     }
     
@@ -70,30 +70,22 @@ class CenterViewController: UIViewController {
         imageView.image = UIImage(data: data!)
 //        userRaisedLabel.text = "Ad: " + toString(currentImage)
         currentImage = currentImage! + 1 < ADS.count ? currentImage! + 1 : 0
-        print(currentImage)
-        print(" - ")
-        println(ADS[currentImage!].image_url)
+//        print(currentImage)
+//        print(" - ")
+//        println(ADS[currentImage!].image_url)
         
 //        self.alert!.show()
     }
     
-//    func showUserRaised() {
-//        var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/user")
-//        fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
-//            print("user-raised: ")
-//            let result = snapshot.value as? String
-//            print(result)
-//        })
-//
-//    }
-    
     func showTotalRaised() {
 //        println("show total raised - " + FIRE_BASE_URL + "/total-raised")
         var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/total-raised")
-        fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
+        var snapshot = fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
             print("total-raised: ")
             println(snapshot.value)
         })
+        print("result: ")
+        println(snapshot.value)
     }
 
 }

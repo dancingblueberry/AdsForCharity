@@ -184,25 +184,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QEm-P2-vPr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" clipsSubviews="YES" contentMode="scaleAspectFit" id="6jK-b0-32e">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="126"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ID-100113060.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8JH-eQ-4D0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="126"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="126" id="bju-32-fka"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.21566231550000001" green="1" blue="0.025146093219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="8JH-eQ-4D0" secondAttribute="trailing" id="0g9-1y-5qd"/>
-                                        <constraint firstItem="8JH-eQ-4D0" firstAttribute="top" secondItem="6jK-b0-32e" secondAttribute="top" id="0ug-gx-3Vr"/>
-                                        <constraint firstItem="8JH-eQ-4D0" firstAttribute="leading" secondItem="6jK-b0-32e" secondAttribute="leading" id="LGe-qb-5Of"/>
-                                        <constraint firstAttribute="bottom" secondItem="8JH-eQ-4D0" secondAttribute="bottom" id="xYI-tq-EB3"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnimalCell" id="TXU-Kh-QMn" customClass="AnimalCell" customModule="SlideOutNavigation" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -251,7 +232,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ID-100113060.jpg" width="400" height="266"/>
         <image name="ID-10029135.jpg" width="400" height="359"/>
     </resources>
 </document>

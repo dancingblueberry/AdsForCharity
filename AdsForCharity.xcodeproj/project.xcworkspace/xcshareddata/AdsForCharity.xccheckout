@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0984BA1A-ABC0-4A4F-B4E9-DF8E00762BB8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AdsForCharity</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>01C454207A4C01F6753F9A93468094F1E0637F9B</key>
+		<string>github.com:dancingblueberry/AdsForCharity.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AdsForCharity.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>01C454207A4C01F6753F9A93468094F1E0637F9B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:dancingblueberry/AdsForCharity.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>01C454207A4C01F6753F9A93468094F1E0637F9B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>01C454207A4C01F6753F9A93468094F1E0637F9B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AdsForCharity</string>
+		</dict>
+	</array>
+</dict>
+</plist>

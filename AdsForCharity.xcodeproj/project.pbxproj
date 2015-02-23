@@ -40,12 +40,12 @@
 /* Begin PBXFileReference section */
 		178B5A5C198E7379006414ED /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		179191C81A1D4F0D00072138 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		17C4DFCA198E428000E0B395 /* SlideOutNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C4DFCA198E428000E0B395 /* AdsForCharity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdsForCharity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C4DFCE198E428000E0B395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C4DFCF198E428000E0B395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C4DFD4198E428000E0B395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17C4DFD6198E428000E0B395 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		17C4DFDC198E428000E0B395 /* SlideOutNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideOutNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C4DFDC198E428000E0B395 /* AdsForCharityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdsForCharityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C4DFE1198E428000E0B395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C4DFE2198E428000E0B395 /* SlideOutNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutNavigationTests.swift; sourceTree = "<group>"; };
 		17C4E01A198E444000E0B395 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		17C4DFCB198E428000E0B395 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17C4DFCA198E428000E0B395 /* SlideOutNavigation.app */,
-				17C4DFDC198E428000E0B395 /* SlideOutNavigationTests.xctest */,
+				17C4DFCA198E428000E0B395 /* AdsForCharity.app */,
+				17C4DFDC198E428000E0B395 /* AdsForCharityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,9 +167,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17C4DFC9198E428000E0B395 /* SlideOutNavigation */ = {
+		17C4DFC9198E428000E0B395 /* AdsForCharity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C4DFE6198E428000E0B395 /* Build configuration list for PBXNativeTarget "SlideOutNavigation" */;
+			buildConfigurationList = 17C4DFE6198E428000E0B395 /* Build configuration list for PBXNativeTarget "AdsForCharity" */;
 			buildPhases = (
 				17C4DFC6198E428000E0B395 /* Sources */,
 				17C4DFC7198E428000E0B395 /* Frameworks */,
@@ -179,14 +179,14 @@
 			);
 			dependencies = (
 			);
-			name = SlideOutNavigation;
+			name = AdsForCharity;
 			productName = SlideOutNavigation;
-			productReference = 17C4DFCA198E428000E0B395 /* SlideOutNavigation.app */;
+			productReference = 17C4DFCA198E428000E0B395 /* AdsForCharity.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17C4DFDB198E428000E0B395 /* SlideOutNavigationTests */ = {
+		17C4DFDB198E428000E0B395 /* AdsForCharityTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C4DFE9198E428000E0B395 /* Build configuration list for PBXNativeTarget "SlideOutNavigationTests" */;
+			buildConfigurationList = 17C4DFE9198E428000E0B395 /* Build configuration list for PBXNativeTarget "AdsForCharityTests" */;
 			buildPhases = (
 				17C4DFD8198E428000E0B395 /* Sources */,
 				17C4DFD9198E428000E0B395 /* Frameworks */,
@@ -197,9 +197,9 @@
 			dependencies = (
 				17C4DFDE198E428000E0B395 /* PBXTargetDependency */,
 			);
-			name = SlideOutNavigationTests;
+			name = AdsForCharityTests;
 			productName = SlideOutNavigationTests;
-			productReference = 17C4DFDC198E428000E0B395 /* SlideOutNavigationTests.xctest */;
+			productReference = 17C4DFDC198E428000E0B395 /* AdsForCharityTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17C4DFC5198E428000E0B395 /* Build configuration list for PBXProject "SlideOutNavigation" */;
+			buildConfigurationList = 17C4DFC5198E428000E0B395 /* Build configuration list for PBXProject "AdsForCharity" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -233,8 +233,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17C4DFC9198E428000E0B395 /* SlideOutNavigation */,
-				17C4DFDB198E428000E0B395 /* SlideOutNavigationTests */,
+				17C4DFC9198E428000E0B395 /* AdsForCharity */,
+				17C4DFDB198E428000E0B395 /* AdsForCharityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +288,7 @@
 /* Begin PBXTargetDependency section */
 		17C4DFDE198E428000E0B395 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17C4DFC9198E428000E0B395 /* SlideOutNavigation */;
+			target = 17C4DFC9198E428000E0B395 /* AdsForCharity */;
 			targetProxy = 17C4DFDD198E428000E0B395 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,7 +395,7 @@
 				INFOPLIST_FILE = "SlideOutNavigation/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AdsForCharity;
 				SWIFT_OBJC_BRIDGING_HEADER = "SlideOutNavigation/SlideOutNavigation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -414,7 +414,7 @@
 				INFOPLIST_FILE = "SlideOutNavigation/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AdsForCharity;
 				SWIFT_OBJC_BRIDGING_HEADER = "SlideOutNavigation/SlideOutNavigation-Bridging-Header.h";
 			};
 			name = Release;
@@ -433,7 +433,7 @@
 				);
 				INFOPLIST_FILE = "SlideOutNavigationTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AdsForCharityTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -448,7 +448,7 @@
 				);
 				INFOPLIST_FILE = "SlideOutNavigationTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AdsForCharityTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -456,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17C4DFC5198E428000E0B395 /* Build configuration list for PBXProject "SlideOutNavigation" */ = {
+		17C4DFC5198E428000E0B395 /* Build configuration list for PBXProject "AdsForCharity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C4DFE4198E428000E0B395 /* Debug */,
@@ -465,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C4DFE6198E428000E0B395 /* Build configuration list for PBXNativeTarget "SlideOutNavigation" */ = {
+		17C4DFE6198E428000E0B395 /* Build configuration list for PBXNativeTarget "AdsForCharity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C4DFE7198E428000E0B395 /* Debug */,
@@ -474,7 +474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C4DFE9198E428000E0B395 /* Build configuration list for PBXNativeTarget "SlideOutNavigationTests" */ = {
+		17C4DFE9198E428000E0B395 /* Build configuration list for PBXNativeTarget "AdsForCharityTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C4DFEA198E428000E0B395 /* Debug */,
