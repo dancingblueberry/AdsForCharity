@@ -18,6 +18,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     var centerViewController: CenterViewController!
     var menuViewController: SidePanelViewController?
     var loginViewController: LoginViewController?
+    var currentViewController: UIViewController?
     
     var menuState: MenuState = .MenuCollapsed {
         didSet {
@@ -32,6 +33,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
         super.viewDidLoad()
         centerViewController = UIStoryboard.centerViewController()
         centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
+        currentViewController = centerViewController
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)
@@ -73,7 +75,6 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     func animateMenuPanel(#shouldExpand: Bool) {
         if (shouldExpand) {
             menuState = .MenuExpanded
-            
             animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerNavigationController.view.frame) - centerPanelExpandedOffset)
         } else {
             animateCenterPanelXPosition(targetPosition: 0) { finished in
@@ -109,12 +110,18 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
                 if (menuState == .MenuCollapsed) {
                     if (gestureIsDraggingFromLeftToRight) {
                         addMenuPanelViewController()
+                        showShadowForCenterViewController(true)
+//                        if (currentViewController == centerViewController) {
+//                            centerViewController.pauseAds()
+//                        }
                     }
-                    showShadowForCenterViewController(true)
                 }
             case .Changed:
-                recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
-                recognizer.setTranslation(CGPointZero, inView: view)
+                if ((menuState == .MenuCollapsed && gestureIsDraggingFromLeftToRight) ||
+                    (menuState == .MenuExpanded && !gestureIsDraggingFromLeftToRight) ) {
+                    recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
+                    recognizer.setTranslation(CGPointZero, inView: view)
+                }
             case .Ended:
                 if (menuViewController != nil) {
                     // animate the side panel open or closed based on whether the view has moved more or less than halfway
@@ -128,6 +135,10 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     
     func menuItemSelected(menuItem: MenuItem) {
         let vc = viewController(menuItem)
+//        if (vc != currentViewController && currentViewController == centerViewController) {
+//            centerViewController.pauseAds()
+//        }
+        self.currentViewController = vc
         self.centerNavigationController.viewControllers = [vc]
         self.toggleMenuPanel()
     }
@@ -135,8 +146,8 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     func viewController(menuItem: MenuItem) -> UIViewController {
         if (menuItem.title == "Home") {
             if (centerViewController == nil) {
-            centerViewController = UIStoryboard.centerViewController()
-            centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
+                centerViewController = UIStoryboard.centerViewController()
+                centerViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: "toggleMenuPanel")
             }
             return centerViewController
         } else if (menuItem.title == "Account") {
