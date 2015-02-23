@@ -1,10 +1,8 @@
 //
 //  CenterViewController.swift
-//  SlideOutNavigation
+//  AdsForCharity
 //
-//  Created by James Frost on 03/08/2014.
-//  Copyright (c) 2014 James Frost. All rights reserved.
-//
+
 
 import UIKit
 
@@ -29,11 +27,11 @@ class CenterViewController: UIViewController {
 //        alert!.title = "+0.10"
 //        alert!.addButtonWithTitle("Ok")
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
             // do some task
             self.startTimer()
             //while(true) {}
-        }
+//        })
         showTotalRaised()
 //        startTimer()
     }
@@ -58,23 +56,40 @@ class CenterViewController: UIViewController {
         // get current system time
         self.timerStart = NSDate()
         
-        nextAd()
-        
-        // start the timer
+//        // start the timer
         self.timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("nextAd"), userInfo: nil, repeats: true)
+        
+        nextAd()
+    }
+    
+    func tickTimer() {
+//        let elapsedTime = self.timerStart!.timeIntervalSinceDate(NSDate())
+//        if ( Int(elapsedTime) % 10 == 0 ) {
+            self.nextAd()
+//        }
     }
     
     func nextAd() {
-        let url = NSURL(string: ADS[currentImage!].image_url)
-        let data = NSData(contentsOfURL: url!)
-        imageView.image = UIImage(data: data!)
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
+            let url = NSURL(string: ADS[self.currentImage!].image_url)
+            let data = NSData(contentsOfURL: url!)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.imageView.image = UIImage(data: data!)
+            })
+            self.currentImage = self.currentImage! + 1 < ADS.count ? self.currentImage! + 1 : 0
+        })
+        
 //        userRaisedLabel.text = "Ad: " + toString(currentImage)
-        currentImage = currentImage! + 1 < ADS.count ? currentImage! + 1 : 0
-//        print(currentImage)
+
+//        println(currentImage)
 //        print(" - ")
 //        println(ADS[currentImage!].image_url)
         
 //        self.alert!.show()
+        
+//        sleep(5)
+//        nextAd()
     }
     
     func showTotalRaised() {

@@ -1,11 +1,7 @@
 //
-//  LeftViewController.swift
-//  SlideOutNavigation
+//  SidePanelViewController.swift
+//  AdsForCharity
 //
-//  Created by James Frost on 03/08/2014.
-//  Copyright (c) 2014 James Frost. All rights reserved.
-//
-
 
 import UIKit
 
