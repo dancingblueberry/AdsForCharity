@@ -27,7 +27,7 @@ class ContainerViewController: UIViewController, SidePanelViewControllerDelegate
     var menuViewController: SidePanelViewController?
     var loginViewController: LoginViewController?
     
-    let centerPanelExpandedOffset: CGFloat = 300
+    let centerPanelExpandedOffset: CGFloat = 70
     
     override func viewDidLoad() {
         super.viewDidLoad()
