@@ -16,7 +16,7 @@ class CenterViewController: UIViewController {
     
     var timer: NSTimer?
     
-    var timer2: dispatch_source_t?
+//    var timer2: dispatch_source_t?
     
 //    var alert: UIAlertView?
     
@@ -84,13 +84,13 @@ class CenterViewController: UIViewController {
     
     func showTotalRaised() {
 //        println("show total raised - " + FIRE_BASE_URL + "/total-raised")
-        var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/total-raised")
-        var snapshot = fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
-            print("total-raised: ")
-            println(snapshot.value)
-        })
-        print("result: ")
-        println(snapshot.value)
+//        var fireBaseRef = Firebase(url:FIRE_BASE_URL + "/total-raised")
+//        var snapshot = fireBaseRef.observeEventType(.Value, withBlock: { snapshot in
+//            print("total-raised: ")
+//            println(snapshot.value)
+//        })
+//        print("result: ")
+//        println(snapshot.value)
     }
 
 }

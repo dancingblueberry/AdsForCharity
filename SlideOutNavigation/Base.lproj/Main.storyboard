@@ -136,7 +136,7 @@
                                     <action selector="skipAd:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rzf-De-8BY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ID-10029135.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5QZ-bA-oHp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5QZ-bA-oHp">
                                 <rect key="frame" x="6" y="147" width="600" height="306"/>
                             </imageView>
                         </subviews>
@@ -234,7 +234,4 @@
             <point key="canvasLocation" x="-451" y="381"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ID-10029135.jpg" width="400" height="359"/>
-    </resources>
 </document>
